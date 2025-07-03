@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Developer | Portfolio</title>
+    <title>M. Hamza Akca</title>
     <style>
         * {
             margin: 0;
@@ -12,8 +12,8 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+            background: #0a0a0a;
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
@@ -30,11 +30,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 15, 35, 0.9);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
             z-index: 1000;
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid #333;
         }
 
         nav {
@@ -46,10 +46,8 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #64ffda, #00bcd4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
@@ -59,14 +57,15 @@
         }
 
         .nav-links a {
-            color: #ffffff;
+            color: #cccccc;
             text-decoration: none;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
-            color: #64ffda;
+            color: #ffffff;
             transform: translateY(-2px);
         }
 
@@ -77,7 +76,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(45deg, #64ffda, #00bcd4);
+            background: #ffffff;
             transition: width 0.3s ease;
         }
 
@@ -103,14 +102,16 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 70%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 30%, rgba(0, 188, 212, 0.1) 0%, transparent 50%);
-            animation: pulse 4s ease-in-out infinite alternate;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%),
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            animation: drift 8s ease-in-out infinite alternate;
         }
 
-        @keyframes pulse {
-            0% { opacity: 0.5; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.1); }
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(10px, -10px) rotate(1deg); }
         }
 
         .hero-content {
@@ -119,37 +120,40 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffffff, #64ffda);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 300;
+            letter-spacing: -2px;
+            color: #ffffff;
             animation: fadeInUp 1s ease-out;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #cccccc;
+            font-weight: 300;
             animation: fadeInUp 1s ease-out 0.2s both;
         }
 
         .cta-button {
             display: inline-block;
             padding: 1rem 2rem;
-            background: linear-gradient(45deg, #64ffda, #00bcd4);
-            color: #0f0f23;
+            background: transparent;
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+            border: 2px solid #ffffff;
+            font-weight: 400;
             transition: all 0.3s ease;
             animation: fadeInUp 1s ease-out 0.4s both;
+            font-family: inherit;
         }
 
         .cta-button:hover {
+            background: #ffffff;
+            color: #0a0a0a;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
         }
 
         @keyframes fadeInUp {
@@ -173,23 +177,30 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            background: linear-gradient(45deg, #ffffff, #64ffda);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
+            font-weight: 300;
+            letter-spacing: -1px;
         }
 
         /* About Section */
+        .about {
+            background: #111111;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
+            color: #cccccc;
+            font-weight: 300;
         }
 
         .about-text p {
@@ -200,75 +211,91 @@
             text-align: center;
         }
 
-        .code-block {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(100, 255, 218, 0.3);
-            border-radius: 10px;
-            padding: 2rem;
-            font-family: 'Courier New', monospace;
-            color: #64ffda;
-            position: relative;
+        .terminal-window {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
             overflow: hidden;
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        .code-block::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(45deg, #64ffda, #00bcd4);
+        .terminal-header {
+            background: #2a2a2a;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid #333;
         }
 
-        .typing-animation {
-            border-right: 2px solid #64ffda;
-            animation: typing 3s steps(40, end) infinite;
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #666;
         }
 
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+        .terminal-dot.red { background: #ff6b6b; }
+        .terminal-dot.yellow { background: #ffd93d; }
+        .terminal-dot.green { background: #6bcf7f; }
+
+        .terminal-body {
+            padding: 1.5rem;
+            color: #ffffff;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .prompt {
+            color: #888;
+        }
+
+        .command {
+            color: #ffffff;
+        }
+
+        .output {
+            color: #cccccc;
+            margin-left: 0;
+        }
+
+        .typing-cursor {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
         }
 
         /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .skill-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(100, 255, 218, 0.2);
-            border-radius: 15px;
+            background: #111111;
+            border: 1px solid #333;
+            border-radius: 8px;
             padding: 2rem;
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(45deg, #64ffda, #00bcd4);
         }
 
         .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(100, 255, 218, 0.2);
-            border-color: #64ffda;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+            border-color: #555;
         }
 
         .skill-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #64ffda;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            font-weight: 400;
         }
 
         .skill-list {
@@ -276,20 +303,69 @@
         }
 
         .skill-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #222;
+            color: #cccccc;
             transition: all 0.3s ease;
+            font-weight: 300;
         }
 
         .skill-list li:hover {
-            color: #64ffda;
+            color: #ffffff;
             transform: translateX(5px);
         }
 
         .skill-list li::before {
-            content: '▸';
-            color: #64ffda;
-            margin-right: 0.5rem;
+            content: '›';
+            color: #666;
+            margin-right: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* OS Section */
+        .os-setup {
+            background: #111111;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .os-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .os-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .os-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+        }
+
+        .os-logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .os-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        .os-card p {
+            color: #cccccc;
+            font-weight: 300;
         }
 
         /* Projects Section */
@@ -301,62 +377,65 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(100, 255, 218, 0.2);
-            border-radius: 15px;
+            background: #111111;
+            border: 1px solid #333;
+            border-radius: 8px;
             padding: 2rem;
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(45deg, #64ffda, #00bcd4);
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(100, 255, 218, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+            border-color: #555;
         }
 
         .project-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #64ffda;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        .project-card p {
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
         }
 
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-top: 1rem;
         }
 
         .tech-tag {
-            background: rgba(100, 255, 218, 0.1);
-            color: #64ffda;
+            background: #222;
+            color: #cccccc;
             padding: 0.3rem 0.8rem;
-            border-radius: 20px;
+            border-radius: 4px;
             font-size: 0.8rem;
-            border: 1px solid rgba(100, 255, 218, 0.3);
+            border: 1px solid #333;
+            font-weight: 300;
         }
 
         /* Contact Section */
         .contact {
-            background: rgba(255, 255, 255, 0.02);
-            border-top: 1px solid rgba(100, 255, 218, 0.2);
+            background: #111111;
+            border-top: 1px solid #333;
         }
 
         .contact-content {
             text-align: center;
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        .contact-content p {
+            color: #cccccc;
+            font-weight: 300;
+            margin-bottom: 2rem;
         }
 
         .contact-links {
@@ -369,26 +448,27 @@
         .contact-link {
             display: inline-block;
             padding: 1rem 2rem;
-            background: rgba(100, 255, 218, 0.1);
-            color: #64ffda;
+            background: transparent;
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 50px;
-            border: 2px solid rgba(100, 255, 218, 0.3);
+            border: 2px solid #333;
             transition: all 0.3s ease;
+            font-weight: 300;
         }
 
         .contact-link:hover {
-            background: rgba(100, 255, 218, 0.2);
+            border-color: #ffffff;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 2rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid #333;
+            color: #666;
+            font-weight: 300;
         }
 
         /* Responsive Design */
@@ -401,9 +481,11 @@
                 font-size: 2.5rem;
             }
 
-            .about-content {
+            .about-content,
+            .os-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2rem;
             }
 
             .skills-grid,
@@ -429,67 +511,87 @@
             transform: translateY(0);
         }
 
-        /* Floating particles */
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #64ffda;
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+        /* Grid pattern overlay */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: -1;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+        /* Minimal scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
     </style>
 </head>
 <body>
+    <div class="grid-overlay"></div>
+    
     <header>
         <nav class="container">
-            <div class="logo">Alex.Dev</div>
+            <div class="logo">M. Hamza Akca</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Student Developer</h1>
-            <p>Passionate about creating innovative software solutions with Python and C++</p>
-            <a href="#projects" class="cta-button">View My Work</a>
+            <h1>Mehmet Hamza Akca</h1>
+            <p>building software solutions mainly with python & c++</p>
+            <a href="#projects" class="cta-button">view_projects()</a>
         </div>
-        <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-        <div class="particle" style="top: 60%; right: 10%; animation-delay: 2s;"></div>
-        <div class="particle" style="top: 80%; left: 20%; animation-delay: 4s;"></div>
     </section>
 
-    <section id="about" class="container">
-        <h2 class="section-title fade-in">About Me</h2>
-        <div class="about-content">
-            <div class="about-text fade-in">
-                <p>I'm a passionate secondary school student with a deep love for software development. Programming isn't just a hobby for me—it's a way to solve problems and create meaningful solutions.</p>
-                <p>I enjoy tackling complex challenges and continuously learning new technologies. Whether it's building efficient algorithms in C++ or creating user-friendly applications in Python, I'm always excited to push the boundaries of what I can create.</p>
-                <p>My goal is to use technology to make a positive impact and eventually pursue a career in software engineering.</p>
-            </div>
-            <div class="about-image fade-in">
-                <div class="code-block">
-                    <div class="typing-animation">
-class Student:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self):<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = "Alex"<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.passion = "Software Development"<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.languages = ["Python", "C++"]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.learning = True<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;def code(self):<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Creating amazing things!"
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">about</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>secondary school student with a deep interest in software development and system architecture. i believe in clean code and the power of open-source collaboration.</p>
+                    <p>my journey involves constantly learning new technologies, solving complex problems, and building meaningful projects. whether it's optimizing performance in c++ or crafting elegant solutions in python, i'm always pushing my limits.</p>
+                    <p>goal: leverage technology to create impactful solutions and pursue a career in software engineering.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dot red"></div>
+                            <div class="terminal-dot yellow"></div>
+                            <div class="terminal-dot green"></div>
+                        </div>
+                        <div class="terminal-body">
+                            <div><span class="prompt">hamza@cachyos:~$</span> <span class="command">whoami</span></div>
+                            <div class="output">Mehmet Hamza Akca</div>
+                            <div><span class="prompt">hamza@cachyos:~$</span> <span class="command">ls skills/</span></div>
+                            <div class="output">python/ c++/ git/</div>
+                            <div><span class="prompt">hamza@cachyos:~$</span> <span class="typing-cursor">_</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -497,66 +599,48 @@ class Student:<br>
     </section>
 
     <section id="skills" class="container">
-        <h2 class="section-title fade-in">Skills & Tools</h2>
+        <h2 class="section-title fade-in">skills</h2>
         <div class="skills-grid">
             <div class="skill-card fade-in">
-                <h3>Programming Languages</h3>
+                <h3>languages</h3>
                 <ul class="skill-list">
-                    <li>Python - Advanced</li>
-                    <li>C++ - Advanced</li>
-                    <li>JavaScript - Learning</li>
-                    <li>HTML/CSS - Intermediate</li>
+                    <li>python - medium</li>
+                    <li>c++ - medium</li>
+                    <li>javascript - learning</li>
+                    <li>html/css - intermediate</li>
                 </ul>
             </div>
             <div class="skill-card fade-in">
-                <h3>Development Tools</h3>
+                <h3>tools & environment</h3>
                 <ul class="skill-list">
-                    <li>Git - Version Control</li>
-                    <li>VSCode - Primary Editor</li>
-                    <li>Neovim - Terminal Editor</li>
-                    <li>Linux - Terminal Proficiency</li>
-                </ul>
-            </div>
-            <div class="skill-card fade-in">
-                <h3>Areas of Interest</h3>
-                <ul class="skill-list">
-                    <li>Web Development</li>
-                    <li>Data Structures & Algorithms</li>
-                    <li>Open Source Projects</li>
-                    <li>Problem Solving</li>
+                    <li>git - version control</li>
+                    <li>vscode - primary editor</li>
+                    <li>neovim - terminal editor</li>
+                    <li>cachy os - arch linux based operating system</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="projects" class="container">
-        <h2 class="section-title fade-in">Featured Projects</h2>
+        <h2 class="section-title fade-in">projects</h2>
         <div class="projects-grid">
             <div class="project-card fade-in">
-                <h3>Task Manager CLI</h3>
-                <p>A command-line task management application built with Python. Features include task creation, priority setting, and data persistence using JSON files.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">JSON</span>
-                    <span class="tech-tag">CLI</span>
+                <h3>Coming Soon...</h3>
+                <p>coming soon</p>
+                 <<div class="project-tech">
+                    <span class="tech-tag">more</span>
+                    <span class="tech-tag">coming</span>
+                    <span class="tech-tag">soon</span>
                 </div>
             </div>
             <div class="project-card fade-in">
-                <h3>Sorting Algorithm Visualizer</h3>
-                <p>Interactive visualization of different sorting algorithms implemented in C++. Helps understand algorithm complexity and performance differences.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">Algorithms</span>
-                    <span class="tech-tag">Visualization</span>
-                </div>
-            </div>
-            <div class="project-card fade-in">
-                <h3>Personal Portfolio</h3>
-                <p>This responsive portfolio website showcasing my projects and skills. Built with modern web technologies and focusing on user experience.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
+                <h3>Coming Soon...</h3>
+                <p>coming soon</p>
+                 <<div class="project-tech">
+                    <span class="tech-tag">more</span>
+                    <span class="tech-tag">coming</span>
+                    <span class="tech-tag">soon</span>
                 </div>
             </div>
         </div>
@@ -565,12 +649,11 @@ class Student:<br>
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-content fade-in">
-                <h2 class="section-title">Let's Connect</h2>
-                <p>I'm always excited to discuss programming, collaborate on projects, or just chat about technology. Feel free to reach out!</p>
+                <h2 class="section-title">connect</h2>
+                <p>interested in collaborating on projects, discussing code, or sharing knowledge about system programming and development workflows.</p>
                 <div class="contact-links">
-                    <a href="mailto:alex@example.com" class="contact-link">Email Me</a>
-                    <a href="https://github.com/alexdev" class="contact-link">GitHub</a>
-                    <a href="https://linkedin.com/in/alexdev" class="contact-link">LinkedIn</a>
+                    <a href="mailto:mehmethamzaakca@tutamail.com" class="contact-link">email</a>
+                    <a href="https://github.com/hamajj" class="contact-link">github</a> 
                 </div>
             </div>
         </div>
@@ -578,7 +661,7 @@ class Student:<br>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Alex Developer. Built with passion and code.</p>
+            <p>Mehmet Hamza Akca - built with minimal dependencies and maximum efficiency</p>
         </div>
     </footer>
 
@@ -615,58 +698,32 @@ class Student:<br>
             observer.observe(el);
         });
 
-        // Dynamic typing animation
-        const codeText = document.querySelector('.typing-animation');
-        const originalText = codeText.innerHTML;
-        let index = 0;
-        
-        function typeWriter() {
-            if (index < originalText.length) {
-                codeText.innerHTML = originalText.substring(0, index + 1);
-                index++;
-                setTimeout(typeWriter, 50);
-            } else {
-                setTimeout(() => {
-                    index = 0;
-                    codeText.innerHTML = '';
-                    typeWriter();
-                }, 3000);
-            }
+        // Terminal cursor blink
+        const cursor = document.querySelector('.typing-cursor');
+        if (cursor) {
+            setInterval(() => {
+                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+            }, 500);
         }
-
-        // Start typing animation when section is visible
-        const aboutSection = document.getElementById('about');
-        const aboutObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    typeWriter();
-                    aboutObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        aboutObserver.observe(aboutSection);
 
         // Header background on scroll
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(15, 15, 35, 0.95)';
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
             } else {
-                header.style.background = 'rgba(15, 15, 35, 0.9)';
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
             }
         });
 
-        // Add more floating particles
-        const hero = document.querySelector('.hero');
-        for (let i = 0; i < 8; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 6 + 's';
-            hero.appendChild(particle);
-        }
+        // Subtle parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
     </script>
 </body>
 </html>
