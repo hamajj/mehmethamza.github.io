@@ -57,3 +57,14 @@ window.addEventListener('scroll', () => {
         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
     }
 });
+
+
+fetch("https://ipinfo.io/json?token=demo")  // demo yerine kendi token'ını yaz
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.country);
+    })
+    .catch(error => {
+    console.log("Bilinmiyor");
+    console.error(error);
+    });
