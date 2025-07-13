@@ -1,4 +1,13 @@
 
+fetch("https://ipinfo.io/json?token=demo")  // demo yerine kendi token'ını yaz
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.country);
+    })
+    .catch(error => {
+    console.log("Bilinmiyor");
+    console.error(error);
+    });
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -58,13 +67,3 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
-fetch("https://ipinfo.io/json?token=demo")  // demo yerine kendi token'ını yaz
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.country);
-    })
-    .catch(error => {
-    console.log("Bilinmiyor");
-    console.error(error);
-    });
